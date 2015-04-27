@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AppLogConfig>
+<LoggingProperties>
+<!--Refresh Time to reload this configuration file In a production environment, if you want to debug a specific component you can change the Alarm Log Levels (for specific Target like File, DB etc) of that specific components. Once the configuration is refreshed new Log Events will be written to the configured Target (File, DB etc). This will help to isolate and troubleshoot a production environment without shutting down the application. -->
+<refresh timeUnit="minutes">0</refresh><!--Logging Framework is Asynchronous in nature. Log Events goes to the Queue first and connectors takes the event from the queue for processing. Event Queue Type 0 - Circular Queue (RECOMMENDED) 1 - Infinite Queue with Initial Capacity and events will be wrapped in Soft References (JVM will garbage collect these soft references when it runs out of memory). 2 - Infinite Queue (NOT RECOMMENDED)-->
+<eventQueueType value="0"/>
+ <eventQueueSize value="100000"/>
+
+<eventSeverity>
+<map>
+<property name="4">Critical</property>
+<property name="1">Trace</property>
+<property name="0">Debug</property>
+<property name="2">Info</property>
+<property name="5">Fatal</property>
+<property name="3">Warning</property>
+</map>
+</eventSeverity>
+</LoggingProperties>
+<connectors>
+<connector cid="1" logLevel="3">
+<name enable="true" class="com.applifire.log.connectors.file.FileConnector"  id="file.connector" isSystemDefined="true">FileConnector</name>
+<map>
+<!-- File Roll Over based on Time -->
+<attribute name="file.rollover.time">1</attribute>
+<!-- File Roll Over Size Unit. Valid Values (MB, GB) -->
+<attribute name="file.rollover.size.unit">MB</attribute>
+<!-- File Roll Over based on File Size. -->
+<attribute name="file.rollover.size">100</attribute>
+<!-- File Roll Over Time Unit Valid values (Hours, Days, Months) -->
+<attribute name="file.rollover.time.unit">Hours</attribute>
+<attribute name="backup.path">logs/backups</attribute>
+<attribute name="backup.date.pattern">yyyyMMddHHmmss</attribute>
+<!--  Buffer size in KB -->
+<attribute name="buffer.size">1</attribute>
+<!--  Flush time in seconds -->
+<attribute name="flush.period">60</attribute>
+<!-- File Roll Over Policy 0 - Based on Time ONLY 1 - Based on Size ONLY 2 - Based on Time or Size, which ever happens first. -->
+<attribute name="file.rollover.policy">0</attribute>
+<!-- Keep Latest X number of Backup Files. Valid values = Greater than ZERO or MINUS 1 If you want to keep all the files then give -1 -->
+<attribute name="backup.keep.last.x.files">2</attribute>
+<attribute name="output.path">logs</attribute>
+</map>
+</connector>
+<connector cid="2" logLevel="3">
+<name enable="true" class="com.applifire.log.connectors.db.DBConnector"  id="db.connector" isSystemDefined="true">DatabaseConnector</name>
+<map>
+<!-- JDBC Connection Pool Size -->
+<attribute name="threadPoolSize">5</attribute>
+<!-- Batch will be commited if Time Out happens before the batch size reached. -->
+<attribute name="thread.timeout">5000</attribute>
+<attribute name="tablename">art_log_events_t</attribute>
+<!-- JDBC Batch Size -->
+<attribute name="batchSize">500</attribute>
+</map>
+</connector>
+<connector cid="3" logLevel="3">
+<name enable="false" class="com.applifire.log.connectors.syslog.SyslogConnector"  id="socket.udp.syslog" isSystemDefined="false">SyslogConnector</name>
+<map>
+<!-- Syslog Receiver Port Number -->
+<attribute name="port">5001</attribute>
+<!-- Syslog Receiver IP Address -->
+<attribute name="hostname">192.168.2.28</attribute>
+</map>
+</connector>
+<connector cid="4" logLevel="3">
+<name enable="false" class="com.applifire.log.connectors.socket.SocketConnector"  id="socket.tcp.server" isSystemDefined="false">TCPSocketConnector</name>
+<map>
+<!-- Server IP Address / Host Name -->
+<attribute name="hostname">192.168.2.40</attribute>
+<!--  Server Port Number -->
+<attribute name="port">4444</attribute>
+</map>
+</connector>
+</connectors>
+</AppLogConfig>

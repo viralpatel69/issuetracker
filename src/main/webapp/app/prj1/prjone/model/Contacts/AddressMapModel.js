@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.model.Contacts.AddressMapModel',{"extend":"Ext.data.Model","fields":[{"name":"addMapId","type":"int","defaultValue":""},{"name":"contactid","reference":"CoreContacts","defaultValue":""},{"name":"addressid","reference":"Address","defaultValue":""},{"name":"entityAudit","reference":"EntityAudit"}]});

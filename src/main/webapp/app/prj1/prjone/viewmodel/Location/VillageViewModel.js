@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Location.VillageViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.VillageViewModel","model":"VillageModel"});

@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Location.StateViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.StateViewModel","model":"StateModel"});

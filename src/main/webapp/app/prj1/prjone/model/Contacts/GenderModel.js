@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.model.Contacts.GenderModel',{"extend":"Ext.data.Model","fields":[{"name":"version_id","type":"int","defaultValue":""},{"name":"id","type":"string","defaultValue":""},{"name":"gender","type":"string","defaultValue":""},{"name":"entityAudit","reference":"EntityAudit"}]});

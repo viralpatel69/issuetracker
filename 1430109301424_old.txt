@@ -1,0 +1,87 @@
+
+
+
+
+ development mode --enabled true 
+
+
+
+buzzorproject --topLevelPackage prjone --isRuleEngine true --projectName prj1 --sourceCodeLocation /home/viral/applifire/appConfigTemplate/appSourceCode/ --tomcatDeployLocation http://localhost:8081 --tomcatAbsolutePath /home/viral/Projects/apache-tomcat-7.0.42/webapps ---userName root --password root --schema jdbc:mysql://127.0.0.1:3306/information_schema --solrhome /home/viral/applifire/customers/1/1R49MU3YJQUQAKQZRDIHTW/solr-4.9.0
+
+entityManagerFactoryBean add property --name packagesToScan --value prjone,com.applifire
+
+Persistent change persistentUnitName --name prj1
+
+Persistent add property --name eclipselink.dialect --value org.eclipse.persistence.platform.database.MySQLPlatform
+
+Persistent add property --name javax.persistence.jdbc.url --value jdbc:mysql://127.0.0.1:3306/prj1
+
+Persistent add property --name javax.persistence.jdbc.user --value root
+
+Persistent add property --name javax.persistence.jdbc.password --value root
+
+Persistent add property --name javax.persistence.jdbc.driver --value com.mysql.jdbc.Driver
+
+// Property File Configuration 
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.jmx.domain --value prj1
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.jmx.unique --value true
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.shutdown.enabled --value true
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.jmx.prj1 --value true
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.dump.id --value prj1dump
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.metrics.id --value prj1metrics
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.shutdown.id --value prj1shutdown
+
+buzzproperties BootProperties --PropertyFileName springBoot.properties --key endpoints.trace.id --value prj1trace
+methodAnnotation create --type ~.app.server.businessservice.aspect.BusinessAspect --method_name beforeSaveAdvice --valueType string --annotation org.aspectj.lang.annotation.Before --key value.org.aspectj.lang.annotation.Before --value "execution(* prjone.app.server.repository.*Impl.save(..))"
+methodAnnotation create --type ~.app.server.service.aspect.ServiceAspect --method_name saveOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.service..save*(..))"
+methodAnnotation create --type ~.app.server.service.aspect.ServiceAspect --method_name deleteOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.service..delete*(..))"
+methodAnnotation create --type ~.app.server.service.aspect.ServiceAspect --method_name updateOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.service..update*(..))"
+methodAnnotation create --type ~.app.server.service.aspect.ServiceAspect --method_name allOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.service..*(..))"
+methodAnnotation create --type ~.app.server.service.aspect.ServiceAspect --method_name findOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.service..find*(..))"
+methodAnnotation create --type ~.app.server.service.aspect.ServiceAspect --method_name getOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.service..get*(..))"
+methodAnnotation create --type ~.app.server.repository.aspect.RepositoryAspect --method_name saveOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.repository..save*(..))"
+methodAnnotation create --type ~.app.server.repository.aspect.RepositoryAspect --method_name updateOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.repository..update*(..))"
+methodAnnotation create --type ~.app.server.repository.aspect.RepositoryAspect --method_name deleteOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.repository..delete*(..))"
+methodAnnotation create --type ~.app.server.repository.aspect.RepositoryAspect --method_name findOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.repository..find*(..))"
+methodAnnotation create --type ~.app.server.repository.aspect.RepositoryAspect --method_name getOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.repository..get*(..))"
+methodAnnotation create --type ~.app.server.repository.aspect.RepositoryAspect --method_name allOperation --valueType string --annotation org.aspectj.lang.annotation.Pointcut --key value.org.aspectj.lang.annotation.Pointcut --value "execution(* prjone.app.server.repository..*(..))"
+methodAnnotation create --type ~.app.server.businessservice.aspect.BusinessAspect --method_name afterAllMethodCalls --valueType string --annotation org.aspectj.lang.annotation.After --key value.org.aspectj.lang.annotation.After --value "execution(* prjone.app.server.businessservice..*(..))"
+
+buzzorclass add --className ~.app.shared.EntityAudit --implements java.io.Serializable --extends  --value_type  --annotation javax.persistence.Embeddable
+
+buzzorclass add --className ~.app.shared.SystemInfo --implements java.io.Serializable --extends  --value_type  --annotation javax.persistence.Embeddable
+
+buzzorfield create --type ~.app.shared.EntityAudit --field_name created_by --dataType java.lang.String --Modifier private --annotation javax.persistence.Column --key name.javax.persistence.Column --value created_by --valueType String
+
+buzzorfield create --type ~.app.shared.EntityAudit --field_name created_date --dataType java.sql.Timestamp --Modifier private --annotation javax.persistence.Column --key name.javax.persistence.Column,updatable.javax.persistence.Column --value created_date,false.javax.persistence.Column --valueType String,boolean
+
+buzzorfield create --type ~.app.shared.EntityAudit --field_name updated_by --dataType java.lang.String --Modifier private --annotation javax.persistence.Column --key name.javax.persistence.Column --value updated_by --valueType String
+
+buzzorfield create --type ~.app.shared.EntityAudit --field_name updated_date --dataType java.sql.Timestamp --Modifier private --annotation javax.persistence.Column --key name.javax.persistence.Column,updatable.javax.persistence.Column --value updated_date,false.javax.persistence.Column --valueType String,boolean
+
+buzzorfield create --type ~.app.shared.SystemInfo --field_name active_status --dataType java.lang.Integer --Modifier private --annotation javax.persistence.Column --key name.javax.persistence.Column --value active_status --valueType String
+
+buzzorfield create --type ~.app.shared.SystemInfo --field_name txn_access_code --dataType java.lang.Integer --Modifier private --annotation javax.persistence.Column --key name.javax.persistence.Column --value txn_access_code --valueType String
+
+methodoperation type setConstructor --class ~.app.shared.EntityAudit --fields created_date,updated_date --initializeValue java.sql.Timestamp(System.currentTimeMillis()),java.sql.Timestamp(System.currentTimeMillis())
+
+methodoperation type getSetMethod --class ~.app.shared.EntityAudit --variableName created_by --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.EntityAudit --variableName created_date --getterMethod true --setterMethod false
+
+methodoperation type getSetMethod --class ~.app.shared.EntityAudit --variableName updated_by --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.EntityAudit --variableName updated_date --getterMethod true --setterMethod false
+
+methodoperation type getSetMethod --class ~.app.shared.SystemInfo --variableName active_status --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.SystemInfo --variableName txn_access_code --getterMethod true --setterMethod true
+
+quit

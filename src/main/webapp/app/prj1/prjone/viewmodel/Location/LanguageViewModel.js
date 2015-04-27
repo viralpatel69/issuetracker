@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Location.LanguageViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.LanguageViewModel","model":"LanguageModel"});

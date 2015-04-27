@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Authentication.UserAccessLevelViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.UserAccessLevelViewModel","model":"UserAccessLevelModel"});

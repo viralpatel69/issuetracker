@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.model.Contacts.CommunicationMapModel',{"extend":"Ext.data.Model","fields":[{"name":"commMapId","type":"int","defaultValue":""},{"name":"contactid","reference":"CoreContacts","defaultValue":""},{"name":"commdataid","reference":"CommunicationData","defaultValue":""},{"name":"entityAudit","reference":"EntityAudit"}]});

@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Location.TimezoneViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.TimezoneViewModel","model":"TimezoneModel"});

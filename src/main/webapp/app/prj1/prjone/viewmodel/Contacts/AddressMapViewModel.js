@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Contacts.AddressMapViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.AddressMapViewModel","model":"AddressMapModel"});

@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Authentication.PasswordPolicyViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.PasswordPolicyViewModel","model":"PasswordPolicyModel"});

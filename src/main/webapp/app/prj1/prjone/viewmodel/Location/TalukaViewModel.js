@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Location.TalukaViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.TalukaViewModel","model":"TalukaModel"});

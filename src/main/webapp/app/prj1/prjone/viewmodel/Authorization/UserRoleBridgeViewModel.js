@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Authorization.UserRoleBridgeViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.UserRoleBridgeViewModel","model":"UserRoleBridgeModel"});

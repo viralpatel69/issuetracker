@@ -1,0 +1,735 @@
+
+
+
+
+ development mode --enabled true 
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.ContactType --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_ContactType_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name contactType --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value contactType.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.ContactType --field_name contactType --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.ContactType --field_name contactType --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,128
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name contactTypeDesc --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value contactTypeDesc.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.ContactType --field_name contactTypeDesc --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name contactTypeIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value contactTypeIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.ContactType --field_name contactTypeIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,128
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name contactTypeId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,contactTypeId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.ContactType --field_name contactTypeId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.ContactType --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName contactType --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName contactTypeDesc --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName contactTypeIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName contactTypeId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.ContactType --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Contacts.ContactType
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.ContactType
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.ContactType --variableName contactType
+
+methodoperation type toString --class ~.app.shared.contacts.ContactType
+
+methodoperation type hashCode --class ~.app.shared.contacts.ContactType --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.ContactType --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.ContactTypeRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.ContactTypeService
+
+buzzorclass add --className ~.app.server.service.ContactTypeServiceImpl  --extends prjone.app.server.service.ContactTypeService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.ContactTypeServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.ContactTypeRepositoryImpl --implements prjone.app.server.repository.ContactTypeRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.ContactTypeRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.ContactTypeRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.ContactType --readOnly false --controllerClass ~.app.server.service.ContactTypeService  --controllerImplClass ~.app.server.service.ContactTypeServiceImpl --repositoryClass ~.app.server.repository.ContactTypeRepository --repositoryImplClass ~.app.server.repository.ContactTypeRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.ContactTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.ContactType --readOnly false --controllerClass ~.app.server.service.ContactTypeService  --controllerImplClass ~.app.server.service.ContactTypeServiceImpl --repositoryClass ~.app.server.repository.ContactTypeRepository --repositoryImplClass ~.app.server.repository.ContactTypeRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.ContactTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.ContactType --readOnly false --controllerClass ~.app.server.service.ContactTypeService  --controllerImplClass ~.app.server.service.ContactTypeServiceImpl --repositoryClass ~.app.server.repository.ContactTypeRepository --repositoryImplClass ~.app.server.repository.ContactTypeRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.ContactTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.ContactType --readOnly false --controllerClass ~.app.server.service.ContactTypeService  --controllerImplClass ~.app.server.service.ContactTypeServiceImpl --repositoryClass ~.app.server.repository.ContactTypeRepository --repositoryImplClass ~.app.server.repository.ContactTypeRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.ContactTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.ContactType --readOnly false --controllerClass ~.app.server.service.ContactTypeService  --controllerImplClass ~.app.server.service.ContactTypeServiceImpl --repositoryClass ~.app.server.repository.ContactTypeRepository --repositoryImplClass ~.app.server.repository.ContactTypeRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.ContactTypebzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.ContactTypeServiceImpl --fieldName contactType --fieldType String
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Contacts.ContactType --queryName ContactType.DefaultFinders --queryValue "select e from ContactType e where e.systemInfo.active_status=1 and e.contactType LIKE :contactType"
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.ContactType --queryName ContactType.findById --queryValue "select e from ContactType e where e.systemInfo.active_status=1 and  e.contactTypeId =:contactTypeId"
+
+methodoperation type namedQueryMethod --queryName ContactType.findById --qvalue "select e from ContactType e where e.systemInfo.active_status=1 and  e.contactTypeId =:contactTypeId" --qarameteres contactTypeId --typeOfParameteres String --entityName ~.app.shared.contacts.ContactType --controllerClass ~.app.server.service.ContactTypeService --controllerImplClass ~.app.server.service.ContactTypeServiceImpl --repositoryClass ~.app.server.repository.ContactTypeRepository --repositoryImplClass ~.app.server.repository.ContactTypeRepositoryImpl --businessServiceClass ~.app.server.businessservice.ContactTypebzService --returnType prjone.app.shared.contacts.ContactType --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.CommunicationGroup --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_CommunicationGroup_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commGroupName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,128
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commGroupDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,commGroupId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationGroup --field_name commGroupId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name communicationType --dataType List<prjone.app.shared.contacts.CommunicationType> --Modifier private --annotation javax.persistence.OneToMany --key cascade.javax.persistence.OneToMany,fetch.javax.persistence.OneToMany,mappedBy.javax.persistence.OneToMany --value javax.persistence.CascadeType$REFRESH#javax.persistence.OneTomany,javax.persistence.FetchType$LAZY#javax.persistence.OneToMany,communicationGroup.javax.persistence.OneToMany  --valueType javatype,javatype,string
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationGroup --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName commGroupName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName commGroupDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName commGroupId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type addRemove --class ~.app.shared.Contacts.CommunicationGroup --fieldName communicationType --fieldType prjone.app.shared.contacts.CommunicationType --isAdd true --isRemove true --isAddAll true --isCount true --fullVariableType List<prjone.app.shared.contacts.CommunicationType>
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationGroup --variableName communicationType --getterMethod true --setterMethod true --direction BIDIRECTION
+
+methodoperation type setValidator --class ~.app.shared.Contacts.CommunicationGroup
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.CommunicationGroup
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.CommunicationGroup --variableName commGroupName
+
+methodoperation type toString --class ~.app.shared.contacts.CommunicationGroup
+
+methodoperation type hashCode --class ~.app.shared.contacts.CommunicationGroup --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.CommunicationGroup --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.CommunicationGroupRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.CommunicationGroupService
+
+buzzorclass add --className ~.app.server.service.CommunicationGroupServiceImpl  --extends prjone.app.server.service.CommunicationGroupService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.CommunicationGroupServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.CommunicationGroupRepositoryImpl --implements prjone.app.server.repository.CommunicationGroupRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.CommunicationGroupRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.CommunicationGroupRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationGroup --readOnly false --controllerClass ~.app.server.service.CommunicationGroupService  --controllerImplClass ~.app.server.service.CommunicationGroupServiceImpl --repositoryClass ~.app.server.repository.CommunicationGroupRepository --repositoryImplClass ~.app.server.repository.CommunicationGroupRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationGroupbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationGroup --readOnly false --controllerClass ~.app.server.service.CommunicationGroupService  --controllerImplClass ~.app.server.service.CommunicationGroupServiceImpl --repositoryClass ~.app.server.repository.CommunicationGroupRepository --repositoryImplClass ~.app.server.repository.CommunicationGroupRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationGroupbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationGroup --readOnly false --controllerClass ~.app.server.service.CommunicationGroupService  --controllerImplClass ~.app.server.service.CommunicationGroupServiceImpl --repositoryClass ~.app.server.repository.CommunicationGroupRepository --repositoryImplClass ~.app.server.repository.CommunicationGroupRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationGroupbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationGroup --readOnly false --controllerClass ~.app.server.service.CommunicationGroupService  --controllerImplClass ~.app.server.service.CommunicationGroupServiceImpl --repositoryClass ~.app.server.repository.CommunicationGroupRepository --repositoryImplClass ~.app.server.repository.CommunicationGroupRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationGroupbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationGroup --readOnly false --controllerClass ~.app.server.service.CommunicationGroupService  --controllerImplClass ~.app.server.service.CommunicationGroupServiceImpl --repositoryClass ~.app.server.repository.CommunicationGroupRepository --repositoryImplClass ~.app.server.repository.CommunicationGroupRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationGroupbzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.CommunicationGroupServiceImpl --fieldName commGroupName --fieldType String
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Contacts.CommunicationGroup --queryName CommunicationGroup.DefaultFinders --queryValue "select e from CommunicationGroup e where e.systemInfo.active_status=1 and e.commGroupName LIKE :commGroupName"
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CommunicationGroup --queryName CommunicationGroup.findById --queryValue "select e from CommunicationGroup e where e.systemInfo.active_status=1 and  e.commGroupId =:commGroupId"
+
+methodoperation type namedQueryMethod --queryName CommunicationGroup.findById --qvalue "select e from CommunicationGroup e where e.systemInfo.active_status=1 and  e.commGroupId =:commGroupId" --qarameteres commGroupId --typeOfParameteres String --entityName ~.app.shared.contacts.CommunicationGroup --controllerClass ~.app.server.service.CommunicationGroupService --controllerImplClass ~.app.server.service.CommunicationGroupServiceImpl --repositoryClass ~.app.server.repository.CommunicationGroupRepository --repositoryImplClass ~.app.server.repository.CommunicationGroupRepositoryImpl --businessServiceClass ~.app.server.businessservice.CommunicationGroupbzService --returnType prjone.app.shared.contacts.CommunicationGroup --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.CommunicationType --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_CommunicationType_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name commTypeName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commTypeName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationType --field_name commTypeName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationType --field_name commTypeName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,128
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name commTypeDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commTypeDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationType --field_name commTypeDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name commType --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,commType.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationType --field_name commType --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name communicationGroup --dataType prjone.app.shared.contacts.CommunicationGroup --Modifier private --annotation javax.persistence.OneToOne,javax.persistence.JoinColumn  --key cascade.javax.persistence.OneToOne,fetch.javax.persistence.OneToOne,name.javax.persistence.JoinColumn,referencedColumnName.javax.persistence.JoinColumn --value javax.persistence.CascadeType$REFRESH#javax.persistence.OneToOne,javax.persistence.FetchType$LAZY#javax.persistence.OneToOne,commGroupId.javax.persistence.JoinColumn,commGroupId.javax.persistence.JoinColumn --valueType javatype,javatype,string,string
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationType --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName commTypeName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName commTypeDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName commType --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationType --variableName communicationGroup --getterMethod true --setterMethod true --direction BIDIRECTION
+
+methodoperation type setValidator --class ~.app.shared.Contacts.CommunicationType
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.CommunicationType
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.CommunicationType --variableName commTypeName
+
+methodoperation type toString --class ~.app.shared.contacts.CommunicationType
+
+methodoperation type hashCode --class ~.app.shared.contacts.CommunicationType --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.CommunicationType --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.CommunicationTypeRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.CommunicationTypeService
+
+buzzorclass add --className ~.app.server.service.CommunicationTypeServiceImpl  --extends prjone.app.server.service.CommunicationTypeService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.CommunicationTypeServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.CommunicationTypeRepositoryImpl --implements prjone.app.server.repository.CommunicationTypeRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.CommunicationTypeRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.CommunicationTypeRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationType --readOnly false --controllerClass ~.app.server.service.CommunicationTypeService  --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationType --readOnly false --controllerClass ~.app.server.service.CommunicationTypeService  --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationType --readOnly false --controllerClass ~.app.server.service.CommunicationTypeService  --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationType --readOnly false --controllerClass ~.app.server.service.CommunicationTypeService  --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationType --readOnly false --controllerClass ~.app.server.service.CommunicationTypeService  --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.CommunicationTypeServiceImpl --fieldName commTypeName --fieldType String
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Contacts.CommunicationType --queryName CommunicationType.DefaultFinders --queryValue "select e from CommunicationType e where e.systemInfo.active_status=1 and e.commTypeName LIKE :commTypeName"
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CommunicationType --queryName CommunicationType.findBycommGroupId --queryValue "select e from CommunicationType e where e.systemInfo.active_status=1 and e.communicationGroup.commGroupId=:commGroupId"
+
+methodoperation type namedQueryMethod --queryName CommunicationType.findBycommGroupId --qvalue "select e from CommunicationType e where e.systemInfo.active_status=1 and e.communicationGroup.commGroupId=:commGroupId" --qarameteres commGroupId --typeOfParameteres java.lang.String --entityName ~.app.shared.contacts.CommunicationType --controllerClass ~.app.server.service.CommunicationTypeService --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --returnType List<prjone.app.shared.contacts.CommunicationType> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CommunicationType --queryName CommunicationType.findById --queryValue "select e from CommunicationType e where e.systemInfo.active_status=1 and  e.commType =:commType"
+
+methodoperation type namedQueryMethod --queryName CommunicationType.findById --qvalue "select e from CommunicationType e where e.systemInfo.active_status=1 and  e.commType =:commType" --qarameteres commType --typeOfParameteres String --entityName ~.app.shared.contacts.CommunicationType --controllerClass ~.app.server.service.CommunicationTypeService --controllerImplClass ~.app.server.service.CommunicationTypeServiceImpl --repositoryClass ~.app.server.repository.CommunicationTypeRepository --repositoryImplClass ~.app.server.repository.CommunicationTypeRepositoryImpl --businessServiceClass ~.app.server.businessservice.CommunicationTypebzService --returnType prjone.app.shared.contacts.CommunicationType --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.Gender --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_Gender_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name gender --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value gender.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.Gender --field_name gender --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.Gender --field_name gender --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name id --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,id.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.Gender --field_name id --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.Gender --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Gender --variableName gender --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Gender --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Gender --variableName id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Gender --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Gender --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Contacts.Gender
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.Gender
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.Gender --variableName gender
+
+methodoperation type toString --class ~.app.shared.contacts.Gender
+
+methodoperation type hashCode --class ~.app.shared.contacts.Gender --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.Gender --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.GenderRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.GenderService
+
+buzzorclass add --className ~.app.server.service.GenderServiceImpl  --extends prjone.app.server.service.GenderService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.GenderServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.GenderRepositoryImpl --implements prjone.app.server.repository.GenderRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.GenderRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.GenderRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Gender --readOnly false --controllerClass ~.app.server.service.GenderService  --controllerImplClass ~.app.server.service.GenderServiceImpl --repositoryClass ~.app.server.repository.GenderRepository --repositoryImplClass ~.app.server.repository.GenderRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.GenderbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Gender --readOnly false --controllerClass ~.app.server.service.GenderService  --controllerImplClass ~.app.server.service.GenderServiceImpl --repositoryClass ~.app.server.repository.GenderRepository --repositoryImplClass ~.app.server.repository.GenderRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.GenderbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Gender --readOnly false --controllerClass ~.app.server.service.GenderService  --controllerImplClass ~.app.server.service.GenderServiceImpl --repositoryClass ~.app.server.repository.GenderRepository --repositoryImplClass ~.app.server.repository.GenderRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.GenderbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Gender --readOnly false --controllerClass ~.app.server.service.GenderService  --controllerImplClass ~.app.server.service.GenderServiceImpl --repositoryClass ~.app.server.repository.GenderRepository --repositoryImplClass ~.app.server.repository.GenderRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.GenderbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.Gender --queryName Gender.findById --queryValue "select e from Gender e where e.systemInfo.active_status=1 and  e.id =:id"
+
+methodoperation type namedQueryMethod --queryName Gender.findById --qvalue "select e from Gender e where e.systemInfo.active_status=1 and  e.id =:id" --qarameteres id --typeOfParameteres String --entityName ~.app.shared.contacts.Gender --controllerClass ~.app.server.service.GenderService --controllerImplClass ~.app.server.service.GenderServiceImpl --repositoryClass ~.app.server.repository.GenderRepository --repositoryImplClass ~.app.server.repository.GenderRepositoryImpl --businessServiceClass ~.app.server.businessservice.GenderbzService --returnType prjone.app.shared.contacts.Gender --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.Title --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_Title_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name titles --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value titles.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.Title --field_name titles --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.Title --field_name titles --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name id --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,id.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.Title --field_name id --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.Title --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Title --variableName titles --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Title --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Title --variableName id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Title --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.Title --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Contacts.Title
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.Title
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.Title --variableName titles
+
+methodoperation type toString --class ~.app.shared.contacts.Title
+
+methodoperation type hashCode --class ~.app.shared.contacts.Title --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.Title --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.TitleRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.TitleService
+
+buzzorclass add --className ~.app.server.service.TitleServiceImpl  --extends prjone.app.server.service.TitleService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.TitleServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.TitleRepositoryImpl --implements prjone.app.server.repository.TitleRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.TitleRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.TitleRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Title --readOnly false --controllerClass ~.app.server.service.TitleService  --controllerImplClass ~.app.server.service.TitleServiceImpl --repositoryClass ~.app.server.repository.TitleRepository --repositoryImplClass ~.app.server.repository.TitleRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.TitlebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Title --readOnly false --controllerClass ~.app.server.service.TitleService  --controllerImplClass ~.app.server.service.TitleServiceImpl --repositoryClass ~.app.server.repository.TitleRepository --repositoryImplClass ~.app.server.repository.TitleRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.TitlebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Title --readOnly false --controllerClass ~.app.server.service.TitleService  --controllerImplClass ~.app.server.service.TitleServiceImpl --repositoryClass ~.app.server.repository.TitleRepository --repositoryImplClass ~.app.server.repository.TitleRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.TitlebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.Title --readOnly false --controllerClass ~.app.server.service.TitleService  --controllerImplClass ~.app.server.service.TitleServiceImpl --repositoryClass ~.app.server.repository.TitleRepository --repositoryImplClass ~.app.server.repository.TitleRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.TitlebzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.Title --queryName Title.findById --queryValue "select e from Title e where e.systemInfo.active_status=1 and  e.id =:id"
+
+methodoperation type namedQueryMethod --queryName Title.findById --qvalue "select e from Title e where e.systemInfo.active_status=1 and  e.id =:id" --qarameteres id --typeOfParameteres String --entityName ~.app.shared.contacts.Title --controllerClass ~.app.server.service.TitleService --controllerImplClass ~.app.server.service.TitleServiceImpl --repositoryClass ~.app.server.repository.TitleRepository --repositoryImplClass ~.app.server.repository.TitleRepositoryImpl --businessServiceClass ~.app.server.businessservice.TitlebzService --returnType prjone.app.shared.contacts.Title --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.CoreContacts --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_CoreContacts_T.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name firstName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value firstName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name firstName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name firstName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name middleName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value middleName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name middleName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name middleName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name lastName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value lastName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name lastName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name lastName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name nativeTitle --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value nativeTitle.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name nativeTitle --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name nativeFirstName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value nativeFirstName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name nativeFirstName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name nativeMiddleName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value nativeMiddleName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name nativeMiddleName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name nativeLastName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value nativeLastName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name nativeLastName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name dateofbirth --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value dateofbirth.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name age --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value age.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name age --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 18.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name age --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 100.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name approximateDOB --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value approximateDOB.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name contactId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,contactId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name contactId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name titleId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value titleId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name nativeLanguageCode --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value nativeLanguageCode.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name genderId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value genderId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name communicationData --dataType List<prjone.app.shared.contacts.CommunicationData> --Modifier private
+
+joinTable add --toclass ~.app.shared.Contacts.CoreContacts --joinTableName ast_1R49MU3YJQUQAKQZRDIHTW_CommunicationMap_B --joinColumnName contactId --joinColumnReferenceName contactId  --inverseJoinColumnReferenceName commDataId --inverseJoinColumnName commDataId --tofield communicationData
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name communicationData --annotation javax.persistence.OneToMany --key cascade.javax.persistence.OneToMany --value javax.persistence.CascadeType$ALL#javax.persistence.OneToMany --valueType javatype
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name address --dataType List<prjone.app.shared.location.Address> --Modifier private
+
+joinTable add --toclass ~.app.shared.Contacts.CoreContacts --joinTableName ast_1R49MU3YJQUQAKQZRDIHTW_AddressMap_B --joinColumnName contactId --joinColumnReferenceName contactId  --inverseJoinColumnReferenceName addressId --inverseJoinColumnName addressId --tofield address
+
+fieldAnnotation create --type ~.app.shared.Contacts.CoreContacts --field_name address --annotation javax.persistence.OneToMany --key cascade.javax.persistence.OneToMany --value javax.persistence.CascadeType$ALL#javax.persistence.OneToMany --valueType javatype
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CoreContacts --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName firstName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName middleName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName lastName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName nativeTitle --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName nativeFirstName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName nativeMiddleName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName nativeLastName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName dateofbirth --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName age --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName approximateDOB --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName contactId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName titleId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName nativeLanguageCode --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName genderId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type addRemove --class ~.app.shared.Contacts.CoreContacts --fieldName communicationData --fieldType prjone.app.shared.contacts.CommunicationData --isAdd true --isRemove true --isAddAll true --isCount true --fullVariableType List<prjone.app.shared.contacts.CommunicationData>
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName communicationData --getterMethod true --setterMethod true --direction unidirection
+
+methodoperation type addRemove --class ~.app.shared.Contacts.CoreContacts --fieldName address --fieldType prjone.app.shared.location.Address --isAdd true --isRemove true --isAddAll true --isCount true --fullVariableType List<prjone.app.shared.location.Address>
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CoreContacts --variableName address --getterMethod true --setterMethod true --direction unidirection
+
+methodoperation type setValidator --class ~.app.shared.Contacts.CoreContacts
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.CoreContacts
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.CoreContacts --variableName firstName,middleName,lastName
+
+methodoperation type toString --class ~.app.shared.contacts.CoreContacts
+
+methodoperation type hashCode --class ~.app.shared.contacts.CoreContacts --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.CoreContacts --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.CoreContactsRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.CoreContactsService
+
+buzzorclass add --className ~.app.server.service.CoreContactsServiceImpl  --extends prjone.app.server.service.CoreContactsService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.CoreContactsServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.CoreContactsRepositoryImpl --implements prjone.app.server.repository.CoreContactsRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.CoreContactsRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.CoreContactsRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CoreContacts --readOnly false --controllerClass ~.app.server.service.CoreContactsService  --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CoreContacts --readOnly false --controllerClass ~.app.server.service.CoreContactsService  --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CoreContacts --readOnly false --controllerClass ~.app.server.service.CoreContactsService  --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CoreContacts --readOnly false --controllerClass ~.app.server.service.CoreContactsService  --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CoreContacts --queryName CoreContacts.findBytitleId --queryValue "select e from CoreContacts e where e.systemInfo.active_status=1 and e.titleId=:titleId"
+
+methodoperation type namedQueryMethod --queryName CoreContacts.findBytitleId --qvalue "select e from CoreContacts e where e.systemInfo.active_status=1 and e.titleId=:titleId" --qarameteres id --typeOfParameteres java.lang.String --entityName ~.app.shared.contacts.CoreContacts --controllerClass ~.app.server.service.CoreContactsService --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --returnType List<prjone.app.shared.contacts.CoreContacts> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CoreContacts --queryName CoreContacts.findBynativeLanguageCode --queryValue "select e from CoreContacts e where e.systemInfo.active_status=1 and e.nativeLanguageCode=:nativeLanguageCode"
+
+methodoperation type namedQueryMethod --queryName CoreContacts.findBynativeLanguageCode --qvalue "select e from CoreContacts e where e.systemInfo.active_status=1 and e.nativeLanguageCode=:nativeLanguageCode" --qarameteres languageId --typeOfParameteres java.lang.String --entityName ~.app.shared.contacts.CoreContacts --controllerClass ~.app.server.service.CoreContactsService --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --returnType List<prjone.app.shared.contacts.CoreContacts> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CoreContacts --queryName CoreContacts.findBygenderId --queryValue "select e from CoreContacts e where e.systemInfo.active_status=1 and e.genderId=:genderId"
+
+methodoperation type namedQueryMethod --queryName CoreContacts.findBygenderId --qvalue "select e from CoreContacts e where e.systemInfo.active_status=1 and e.genderId=:genderId" --qarameteres id --typeOfParameteres java.lang.String --entityName ~.app.shared.contacts.CoreContacts --controllerClass ~.app.server.service.CoreContactsService --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --returnType List<prjone.app.shared.contacts.CoreContacts> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CoreContacts --queryName CoreContacts.findById --queryValue "select e from CoreContacts e where e.systemInfo.active_status=1 and  e.contactId =:contactId"
+
+methodoperation type namedQueryMethod --queryName CoreContacts.findById --qvalue "select e from CoreContacts e where e.systemInfo.active_status=1 and  e.contactId =:contactId" --qarameteres contactId --typeOfParameteres String --entityName ~.app.shared.contacts.CoreContacts --controllerClass ~.app.server.service.CoreContactsService --controllerImplClass ~.app.server.service.CoreContactsServiceImpl --repositoryClass ~.app.server.repository.CoreContactsRepository --repositoryImplClass ~.app.server.repository.CoreContactsRepositoryImpl --businessServiceClass ~.app.server.businessservice.CoreContactsbzService --returnType prjone.app.shared.contacts.CoreContacts --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Contacts.CommunicationData --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_CommunicationData_TP.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name commData --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commData.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationData --field_name commData --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name commDataId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,commDataId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Contacts.CommunicationData --field_name commDataId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name commGroupId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commGroupId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name commType --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value commType.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Contacts.CommunicationData --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName commData --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName commDataId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName commGroupId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName commType --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Contacts.CommunicationData --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Contacts.CommunicationData
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Contacts.CommunicationData
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Contacts.CommunicationData --variableName commData
+
+methodoperation type toString --class ~.app.shared.contacts.CommunicationData
+
+methodoperation type hashCode --class ~.app.shared.contacts.CommunicationData --primaryClass true
+
+methodoperation type equals --class ~.app.shared.contacts.CommunicationData --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.CommunicationDataRepository --extends com.applifire.server.repository.SearchInterface
+
+buzzorclass add --className ~.app.server.repository.CommunicationDataRepositoryImpl --implements prjone.app.server.repository.CommunicationDataRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.CommunicationDataRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.CommunicationDataRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationData --readOnly false --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationData --readOnly false --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationData --readOnly false --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.contacts.CommunicationData --readOnly false --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CommunicationData --queryName CommunicationData.findBycommGroupId --queryValue "select e from CommunicationData e where e.systemInfo.active_status=1 and e.commGroupId=:commGroupId"
+
+methodoperation type namedQueryMethod --queryName CommunicationData.findBycommGroupId --qvalue "select e from CommunicationData e where e.systemInfo.active_status=1 and e.commGroupId=:commGroupId" --qarameteres commGroupId --typeOfParameteres java.lang.String --entityName ~.app.shared.contacts.CommunicationData  --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl  --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --returnType List<prjone.app.shared.contacts.CommunicationData> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CommunicationData --queryName CommunicationData.findBycommType --queryValue "select e from CommunicationData e where e.systemInfo.active_status=1 and e.commType=:commType"
+
+methodoperation type namedQueryMethod --queryName CommunicationData.findBycommType --qvalue "select e from CommunicationData e where e.systemInfo.active_status=1 and e.commType=:commType" --qarameteres commType --typeOfParameteres java.lang.String --entityName ~.app.shared.contacts.CommunicationData  --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl  --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --returnType List<prjone.app.shared.contacts.CommunicationData> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.contacts.CommunicationData --queryName CommunicationData.findById --queryValue "select e from CommunicationData e where e.systemInfo.active_status=1 and  e.commDataId =:commDataId"
+
+methodoperation type namedQueryMethod --queryName CommunicationData.findById --qvalue "select e from CommunicationData e where e.systemInfo.active_status=1 and  e.commDataId =:commDataId" --qarameteres commDataId --typeOfParameteres String --entityName ~.app.shared.contacts.CommunicationData  --repositoryClass ~.app.server.repository.CommunicationDataRepository --repositoryImplClass ~.app.server.repository.CommunicationDataRepositoryImpl  --businessServiceClass ~.app.server.businessservice.CommunicationDatabzService --returnType prjone.app.shared.contacts.CommunicationData --isFindByID true --isUserAccess false
+
+quit

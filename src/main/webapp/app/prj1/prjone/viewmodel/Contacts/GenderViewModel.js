@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Contacts.GenderViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.GenderViewModel","model":"GenderModel"});

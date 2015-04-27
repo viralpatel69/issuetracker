@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Contacts.CommunicationTypeViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.CommunicationTypeViewModel","model":"CommunicationTypeModel"});

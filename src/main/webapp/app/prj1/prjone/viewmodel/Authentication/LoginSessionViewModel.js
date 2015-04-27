@@ -1,0 +1,1 @@
+Ext.define('Buzzor.prj1.prjone.viewmodel.Authentication.LoginSessionViewModel',{"extend":"Ext.app.ViewModel","alias":"viewmodel.LoginSessionViewModel","model":"LoginSessionModel"});

@@ -1,0 +1,1195 @@
+
+
+
+
+ development mode --enabled true 
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.PasswordAlgo --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface,com.applifire.server.security.authentication.interfaces.PasswordAlgoInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_PasswordAlgo_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name algorithm --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value algorithm.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algorithm --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algorithm --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algorithm --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value algoName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value algoDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value algoIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoHelp --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value algoHelp.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoHelp --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,algoId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordAlgo --field_name algoId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordAlgo --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName algorithm --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName algoName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName algoDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName algoIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName algoHelp --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName algoId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordAlgo --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authentication.PasswordAlgo
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.PasswordAlgo
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.PasswordAlgo --variableName algoName
+
+methodoperation type toString --class ~.app.shared.authentication.PasswordAlgo
+
+methodoperation type hashCode --class ~.app.shared.authentication.PasswordAlgo --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.PasswordAlgo --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.PasswordAlgoRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.PasswordAlgoService
+
+buzzorclass add --className ~.app.server.service.PasswordAlgoServiceImpl  --extends prjone.app.server.service.PasswordAlgoService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.PasswordAlgoServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.PasswordAlgoRepositoryImpl --implements com.applifire.server.security.authentication.interfaces.PasswordAlgoRepositoryIntefrace,prjone.app.server.repository.PasswordAlgoRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.PasswordAlgoRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.PasswordAlgoRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+passwordPolicy findall --className ~.app.server.repository.PasswordAlgoRepositoryImpl --entitypath com.applifire.server.security.authentication.interfaces.PasswordAlgoInterface
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordAlgo --readOnly false --controllerClass ~.app.server.service.PasswordAlgoService  --controllerImplClass ~.app.server.service.PasswordAlgoServiceImpl --repositoryClass ~.app.server.repository.PasswordAlgoRepository --repositoryImplClass ~.app.server.repository.PasswordAlgoRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordAlgobzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordAlgo --readOnly false --controllerClass ~.app.server.service.PasswordAlgoService  --controllerImplClass ~.app.server.service.PasswordAlgoServiceImpl --repositoryClass ~.app.server.repository.PasswordAlgoRepository --repositoryImplClass ~.app.server.repository.PasswordAlgoRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordAlgobzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordAlgo --readOnly false --controllerClass ~.app.server.service.PasswordAlgoService  --controllerImplClass ~.app.server.service.PasswordAlgoServiceImpl --repositoryClass ~.app.server.repository.PasswordAlgoRepository --repositoryImplClass ~.app.server.repository.PasswordAlgoRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordAlgobzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordAlgo --readOnly false --controllerClass ~.app.server.service.PasswordAlgoService  --controllerImplClass ~.app.server.service.PasswordAlgoServiceImpl --repositoryClass ~.app.server.repository.PasswordAlgoRepository --repositoryImplClass ~.app.server.repository.PasswordAlgoRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordAlgobzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.PasswordAlgoServiceImpl --fieldName algoName --fieldType String
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Authentication.PasswordAlgo --queryName PasswordAlgo.DefaultFinders --queryValue "select e from PasswordAlgo e where e.systemInfo.active_status=1 and e.algoName LIKE :algoName"
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.PasswordAlgo --queryName PasswordAlgo.findById --queryValue "select e from PasswordAlgo e where e.systemInfo.active_status=1 and  e.algoId =:algoId"
+
+methodoperation type namedQueryMethod --queryName PasswordAlgo.findById --qvalue "select e from PasswordAlgo e where e.systemInfo.active_status=1 and  e.algoId =:algoId" --qarameteres algoId --typeOfParameteres String --entityName ~.app.shared.authentication.PasswordAlgo --controllerClass ~.app.server.service.PasswordAlgoService --controllerImplClass ~.app.server.service.PasswordAlgoServiceImpl --repositoryClass ~.app.server.repository.PasswordAlgoRepository --repositoryImplClass ~.app.server.repository.PasswordAlgoRepositoryImpl --businessServiceClass ~.app.server.businessservice.PasswordAlgobzService --returnType prjone.app.shared.authentication.PasswordAlgo --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.PasswordPolicy --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface,com.applifire.server.security.authentication.interfaces.PasswordPolicyInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_PasswordPolicy_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value policyName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value policyDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name maxPwdLength --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value maxPwdLength.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name maxPwdLength --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name maxPwdLength --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 32.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name minPwdLength --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value minPwdLength.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minPwdLength --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minPwdLength --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minPwdLength --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name minCapitalLetters --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value minCapitalLetters.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minCapitalLetters --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minCapitalLetters --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name minSmallLetters --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value minSmallLetters.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minSmallLetters --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minSmallLetters --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name minNumericValues --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value minNumericValues.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minNumericValues --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minNumericValues --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name minSpecialLetters --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value minSpecialLetters.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minSpecialLetters --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name minSpecialLetters --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name allowedSpecialLetters --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value allowedSpecialLetters.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name allowedSpecialLetters --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,policyId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PasswordPolicy --field_name policyId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PasswordPolicy --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName policyName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName policyDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName maxPwdLength --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName minPwdLength --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName minCapitalLetters --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName minSmallLetters --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName minNumericValues --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName minSpecialLetters --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName allowedSpecialLetters --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName policyId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PasswordPolicy --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authentication.PasswordPolicy
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.PasswordPolicy
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.PasswordPolicy --variableName policyName
+
+methodoperation type toString --class ~.app.shared.authentication.PasswordPolicy
+
+methodoperation type hashCode --class ~.app.shared.authentication.PasswordPolicy --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.PasswordPolicy --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.PasswordPolicyRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.PasswordPolicyService
+
+buzzorclass add --className ~.app.server.service.PasswordPolicyServiceImpl  --extends prjone.app.server.service.PasswordPolicyService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.PasswordPolicyServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.PasswordPolicyRepositoryImpl --implements com.applifire.server.security.authentication.interfaces.PasswordPolicyRepositoryInterface,prjone.app.server.repository.PasswordPolicyRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.PasswordPolicyRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.PasswordPolicyRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+passwordPolicy findall --className ~.app.server.repository.PasswordPolicyRepositoryImpl --entitypath com.applifire.server.security.authentication.interfaces.PasswordPolicyInterface
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordPolicy --readOnly false --controllerClass ~.app.server.service.PasswordPolicyService  --controllerImplClass ~.app.server.service.PasswordPolicyServiceImpl --repositoryClass ~.app.server.repository.PasswordPolicyRepository --repositoryImplClass ~.app.server.repository.PasswordPolicyRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordPolicybzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordPolicy --readOnly false --controllerClass ~.app.server.service.PasswordPolicyService  --controllerImplClass ~.app.server.service.PasswordPolicyServiceImpl --repositoryClass ~.app.server.repository.PasswordPolicyRepository --repositoryImplClass ~.app.server.repository.PasswordPolicyRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordPolicybzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordPolicy --readOnly false --controllerClass ~.app.server.service.PasswordPolicyService  --controllerImplClass ~.app.server.service.PasswordPolicyServiceImpl --repositoryClass ~.app.server.repository.PasswordPolicyRepository --repositoryImplClass ~.app.server.repository.PasswordPolicyRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordPolicybzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PasswordPolicy --readOnly false --controllerClass ~.app.server.service.PasswordPolicyService  --controllerImplClass ~.app.server.service.PasswordPolicyServiceImpl --repositoryClass ~.app.server.repository.PasswordPolicyRepository --repositoryImplClass ~.app.server.repository.PasswordPolicyRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PasswordPolicybzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.PasswordPolicyServiceImpl --fieldName policyName --fieldType String
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Authentication.PasswordPolicy --queryName PasswordPolicy.DefaultFinders --queryValue "select e from PasswordPolicy e where e.systemInfo.active_status=1 and e.policyName LIKE :policyName"
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.PasswordPolicy --queryName PasswordPolicy.findById --queryValue "select e from PasswordPolicy e where e.systemInfo.active_status=1 and  e.policyId =:policyId"
+
+methodoperation type namedQueryMethod --queryName PasswordPolicy.findById --qvalue "select e from PasswordPolicy e where e.systemInfo.active_status=1 and  e.policyId =:policyId" --qarameteres policyId --typeOfParameteres String --entityName ~.app.shared.authentication.PasswordPolicy --controllerClass ~.app.server.service.PasswordPolicyService --controllerImplClass ~.app.server.service.PasswordPolicyServiceImpl --repositoryClass ~.app.server.repository.PasswordPolicyRepository --repositoryImplClass ~.app.server.repository.PasswordPolicyRepositoryImpl --businessServiceClass ~.app.server.businessservice.PasswordPolicybzService --returnType prjone.app.shared.authentication.PasswordPolicy --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.Question --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_Question_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name levelid --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value levelid.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name levelid --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name levelid --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name levelid --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name question --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value question.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name question --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name question --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name questionDetails --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value questionDetails.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name questionIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value questionIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name questionIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name questionId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,questionId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Question --field_name questionId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.Question --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName levelid --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName question --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName questionDetails --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName questionIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName questionId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Question --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authentication.Question
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.Question
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.Question --variableName levelid,question
+
+methodoperation type toString --class ~.app.shared.authentication.Question
+
+methodoperation type hashCode --class ~.app.shared.authentication.Question --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.Question --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.QuestionRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.QuestionService
+
+buzzorclass add --className ~.app.server.service.QuestionServiceImpl  --extends prjone.app.server.service.QuestionService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.QuestionServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.QuestionRepositoryImpl --implements prjone.app.server.repository.QuestionRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.QuestionRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.QuestionRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Question --readOnly false --controllerClass ~.app.server.service.QuestionService  --controllerImplClass ~.app.server.service.QuestionServiceImpl --repositoryClass ~.app.server.repository.QuestionRepository --repositoryImplClass ~.app.server.repository.QuestionRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.QuestionbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Question --readOnly false --controllerClass ~.app.server.service.QuestionService  --controllerImplClass ~.app.server.service.QuestionServiceImpl --repositoryClass ~.app.server.repository.QuestionRepository --repositoryImplClass ~.app.server.repository.QuestionRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.QuestionbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Question --readOnly false --controllerClass ~.app.server.service.QuestionService  --controllerImplClass ~.app.server.service.QuestionServiceImpl --repositoryClass ~.app.server.repository.QuestionRepository --repositoryImplClass ~.app.server.repository.QuestionRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.QuestionbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Question --readOnly false --controllerClass ~.app.server.service.QuestionService  --controllerImplClass ~.app.server.service.QuestionServiceImpl --repositoryClass ~.app.server.repository.QuestionRepository --repositoryImplClass ~.app.server.repository.QuestionRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.QuestionbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.Question --queryName Question.findById --queryValue "select e from Question e where e.systemInfo.active_status=1 and  e.questionId =:questionId"
+
+methodoperation type namedQueryMethod --queryName Question.findById --qvalue "select e from Question e where e.systemInfo.active_status=1 and  e.questionId =:questionId" --qarameteres questionId --typeOfParameteres String --entityName ~.app.shared.authentication.Question --controllerClass ~.app.server.service.QuestionService --controllerImplClass ~.app.server.service.QuestionServiceImpl --repositoryClass ~.app.server.repository.QuestionRepository --repositoryImplClass ~.app.server.repository.QuestionRepositoryImpl --businessServiceClass ~.app.server.businessservice.QuestionbzService --returnType prjone.app.shared.authentication.Question --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.UserAccessLevel --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_UserAccessLevel_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name userAccessLevel --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userAccessLevel.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name userAccessLevel --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name userAccessLevel --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name userAccessLevel --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value levelName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,256
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value levelDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelDescription --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,256
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelHelp --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value levelHelp.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelHelp --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,2048
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value levelIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name levelIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,256
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name userAccessLevelId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,userAccessLevelId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessLevel --field_name userAccessLevelId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,64
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessLevel --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName userAccessLevel --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName levelName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName levelDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName levelHelp --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName levelIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName userAccessLevelId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessLevel --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authentication.UserAccessLevel
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.UserAccessLevel
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.UserAccessLevel --variableName userAccessLevel,levelName,levelDescription
+
+methodoperation type toString --class ~.app.shared.authentication.UserAccessLevel
+
+methodoperation type hashCode --class ~.app.shared.authentication.UserAccessLevel --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.UserAccessLevel --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.UserAccessLevelRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.UserAccessLevelService
+
+buzzorclass add --className ~.app.server.service.UserAccessLevelServiceImpl  --extends prjone.app.server.service.UserAccessLevelService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.UserAccessLevelServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.UserAccessLevelRepositoryImpl --implements prjone.app.server.repository.UserAccessLevelRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.UserAccessLevelRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.UserAccessLevelRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessLevel --readOnly false --controllerClass ~.app.server.service.UserAccessLevelService  --controllerImplClass ~.app.server.service.UserAccessLevelServiceImpl --repositoryClass ~.app.server.repository.UserAccessLevelRepository --repositoryImplClass ~.app.server.repository.UserAccessLevelRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessLevelbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessLevel --readOnly false --controllerClass ~.app.server.service.UserAccessLevelService  --controllerImplClass ~.app.server.service.UserAccessLevelServiceImpl --repositoryClass ~.app.server.repository.UserAccessLevelRepository --repositoryImplClass ~.app.server.repository.UserAccessLevelRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessLevelbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessLevel --readOnly false --controllerClass ~.app.server.service.UserAccessLevelService  --controllerImplClass ~.app.server.service.UserAccessLevelServiceImpl --repositoryClass ~.app.server.repository.UserAccessLevelRepository --repositoryImplClass ~.app.server.repository.UserAccessLevelRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessLevelbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessLevel --readOnly false --controllerClass ~.app.server.service.UserAccessLevelService  --controllerImplClass ~.app.server.service.UserAccessLevelServiceImpl --repositoryClass ~.app.server.repository.UserAccessLevelRepository --repositoryImplClass ~.app.server.repository.UserAccessLevelRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessLevelbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.UserAccessLevel --queryName UserAccessLevel.findById --queryValue "select e from UserAccessLevel e where e.systemInfo.active_status=1 and  e.userAccessLevelId =:userAccessLevelId"
+
+methodoperation type namedQueryMethod --queryName UserAccessLevel.findById --qvalue "select e from UserAccessLevel e where e.systemInfo.active_status=1 and  e.userAccessLevelId =:userAccessLevelId" --qarameteres userAccessLevelId --typeOfParameteres String --entityName ~.app.shared.authentication.UserAccessLevel --controllerClass ~.app.server.service.UserAccessLevelService --controllerImplClass ~.app.server.service.UserAccessLevelServiceImpl --repositoryClass ~.app.server.repository.UserAccessLevelRepository --repositoryImplClass ~.app.server.repository.UserAccessLevelRepositoryImpl --businessServiceClass ~.app.server.businessservice.UserAccessLevelbzService --returnType prjone.app.shared.authentication.UserAccessLevel --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.UserAccessDomain --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_UserAccessDomain_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name userAccessDomain --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userAccessDomain.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name userAccessDomain --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name userAccessDomain --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name userAccessDomain --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value domainName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,256
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value domainDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainDescription --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,256
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainHelp --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value domainHelp.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainHelp --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,2048
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value domainIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name domainIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,256
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name userAccessDomainId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,userAccessDomainId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserAccessDomain --field_name userAccessDomainId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,64
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserAccessDomain --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName userAccessDomain --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName domainName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName domainDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName domainHelp --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName domainIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName userAccessDomainId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserAccessDomain --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authentication.UserAccessDomain
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.UserAccessDomain
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.UserAccessDomain --variableName userAccessDomain,domainName,domainDescription
+
+methodoperation type toString --class ~.app.shared.authentication.UserAccessDomain
+
+methodoperation type hashCode --class ~.app.shared.authentication.UserAccessDomain --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.UserAccessDomain --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.UserAccessDomainRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.UserAccessDomainService
+
+buzzorclass add --className ~.app.server.service.UserAccessDomainServiceImpl  --extends prjone.app.server.service.UserAccessDomainService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.UserAccessDomainServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.UserAccessDomainRepositoryImpl --implements prjone.app.server.repository.UserAccessDomainRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.UserAccessDomainRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.UserAccessDomainRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessDomain --readOnly false --controllerClass ~.app.server.service.UserAccessDomainService  --controllerImplClass ~.app.server.service.UserAccessDomainServiceImpl --repositoryClass ~.app.server.repository.UserAccessDomainRepository --repositoryImplClass ~.app.server.repository.UserAccessDomainRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessDomainbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessDomain --readOnly false --controllerClass ~.app.server.service.UserAccessDomainService  --controllerImplClass ~.app.server.service.UserAccessDomainServiceImpl --repositoryClass ~.app.server.repository.UserAccessDomainRepository --repositoryImplClass ~.app.server.repository.UserAccessDomainRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessDomainbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessDomain --readOnly false --controllerClass ~.app.server.service.UserAccessDomainService  --controllerImplClass ~.app.server.service.UserAccessDomainServiceImpl --repositoryClass ~.app.server.repository.UserAccessDomainRepository --repositoryImplClass ~.app.server.repository.UserAccessDomainRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessDomainbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserAccessDomain --readOnly false --controllerClass ~.app.server.service.UserAccessDomainService  --controllerImplClass ~.app.server.service.UserAccessDomainServiceImpl --repositoryClass ~.app.server.repository.UserAccessDomainRepository --repositoryImplClass ~.app.server.repository.UserAccessDomainRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserAccessDomainbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.UserAccessDomain --queryName UserAccessDomain.findById --queryValue "select e from UserAccessDomain e where e.systemInfo.active_status=1 and  e.userAccessDomainId =:userAccessDomainId"
+
+methodoperation type namedQueryMethod --queryName UserAccessDomain.findById --qvalue "select e from UserAccessDomain e where e.systemInfo.active_status=1 and  e.userAccessDomainId =:userAccessDomainId" --qarameteres userAccessDomainId --typeOfParameteres String --entityName ~.app.shared.authentication.UserAccessDomain --controllerClass ~.app.server.service.UserAccessDomainService --controllerImplClass ~.app.server.service.UserAccessDomainServiceImpl --repositoryClass ~.app.server.repository.UserAccessDomainRepository --repositoryImplClass ~.app.server.repository.UserAccessDomainRepositoryImpl --businessServiceClass ~.app.server.businessservice.UserAccessDomainbzService --returnType prjone.app.shared.authentication.UserAccessDomain --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.User --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_User_TP.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name userAccessCode --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userAccessCode.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name userAccessCode --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name userAccessCode --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name multiFactorAuthEnabled --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value multiFactorAuthEnabled.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name multiFactorAuthEnabled --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name multiFactorAuthEnabled --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name genTempOneTimePassword --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value genTempOneTimePassword.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name genTempOneTimePassword --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name genTempOneTimePassword --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name allowMultipleLogin --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value allowMultipleLogin.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name allowMultipleLogin --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name allowMultipleLogin --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name isLocked --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value isLocked.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name isLocked --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name isLocked --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name isDeleted --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value isDeleted.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name isDeleted --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name isDeleted --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name changePasswordNextLogin --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value changePasswordNextLogin.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name changePasswordNextLogin --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name changePasswordNextLogin --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 1.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name passwordExpiryDate --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value passwordExpiryDate.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name passwordAlgo --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value passwordAlgo.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name passwordAlgo --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name passwordAlgo --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name passwordAlgo --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name lastPasswordChangeDate --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value lastPasswordChangeDate.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name sessionTimeout --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value sessionTimeout.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name sessionTimeout --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 60.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name sessionTimeout --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name userId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,userId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.User --field_name userId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name userAccessLevelId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userAccessLevelId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name userAccessDomainId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userAccessDomainId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name userData --dataType prjone.app.shared.authentication.UserData --Modifier private --annotation javax.persistence.OneToOne --key cascade.javax.persistence.OneToOne,fetch.javax.persistence.OneToOne,mappedBy.javax.persistence.OneToOne --value javax.persistence.CascadeType$ALL#javax.persistence.OneToOne,javax.persistence.FetchType$LAZY#javax.persistence.OneToOne,user.javax.persistence.OneToOne  --valueType javatype,javatype,string
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name passRecovery --dataType List<prjone.app.shared.authentication.PassRecovery> --Modifier private --annotation javax.persistence.OneToMany --key cascade.javax.persistence.OneToMany,fetch.javax.persistence.OneToMany,mappedBy.javax.persistence.OneToMany --value javax.persistence.CascadeType$REFRESH#javax.persistence.OneTomany,javax.persistence.FetchType$LAZY#javax.persistence.OneToMany,user.javax.persistence.OneToMany  --valueType javatype,javatype,string
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.User --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName userAccessCode --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName multiFactorAuthEnabled --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName genTempOneTimePassword --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName allowMultipleLogin --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName isLocked --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName isDeleted --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName changePasswordNextLogin --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName passwordExpiryDate --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName passwordAlgo --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName lastPasswordChangeDate --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName sessionTimeout --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName userId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName userAccessLevelId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName userAccessDomainId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName userData --getterMethod true --setterMethod true --direction BIDIRECTION
+
+methodoperation type addRemove --class ~.app.shared.Authentication.User --fieldName passRecovery --fieldType prjone.app.shared.authentication.PassRecovery --isAdd true --isRemove true --isAddAll true --isCount true --fullVariableType List<prjone.app.shared.authentication.PassRecovery>
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.User --variableName passRecovery --getterMethod true --setterMethod true --direction BIDIRECTION
+
+methodoperation type setValidator --class ~.app.shared.Authentication.User
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.User
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.User --variableName passwordAlgo
+
+methodoperation type toString --class ~.app.shared.authentication.User
+
+methodoperation type hashCode --class ~.app.shared.authentication.User --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.User --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.UserRepository --extends com.applifire.server.repository.SearchInterface
+
+buzzorclass add --className ~.app.server.repository.UserRepositoryImpl --implements prjone.app.server.repository.UserRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.UserRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.UserRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.User --readOnly false --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.User --readOnly false --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.User --readOnly false --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.User --readOnly false --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.User --queryName User.findByuserAccessLevelId --queryValue "select e from User e where e.systemInfo.active_status=1 and e.userAccessLevelId=:userAccessLevelId"
+
+methodoperation type namedQueryMethod --queryName User.findByuserAccessLevelId --qvalue "select e from User e where e.systemInfo.active_status=1 and e.userAccessLevelId=:userAccessLevelId" --qarameteres userAccessLevelId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.User  --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl  --businessServiceClass ~.app.server.businessservice.UserbzService --returnType List<prjone.app.shared.authentication.User> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.User --queryName User.findByuserAccessDomainId --queryValue "select e from User e where e.systemInfo.active_status=1 and e.userAccessDomainId=:userAccessDomainId"
+
+methodoperation type namedQueryMethod --queryName User.findByuserAccessDomainId --qvalue "select e from User e where e.systemInfo.active_status=1 and e.userAccessDomainId=:userAccessDomainId" --qarameteres userAccessDomainId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.User  --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl  --businessServiceClass ~.app.server.businessservice.UserbzService --returnType List<prjone.app.shared.authentication.User> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.User --queryName User.findById --queryValue "select e from User e where e.systemInfo.active_status=1 and  e.userId =:userId"
+
+methodoperation type namedQueryMethod --queryName User.findById --qvalue "select e from User e where e.systemInfo.active_status=1 and  e.userId =:userId" --qarameteres userId --typeOfParameteres String --entityName ~.app.shared.authentication.User  --repositoryClass ~.app.server.repository.UserRepository --repositoryImplClass ~.app.server.repository.UserRepositoryImpl  --businessServiceClass ~.app.server.businessservice.UserbzService --returnType prjone.app.shared.authentication.User --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.Login --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface,com.applifire.server.security.authentication.interfaces.UserAuthentication --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_Login_T.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name serverAuthImage --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value serverAuthImage.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name serverAuthImage --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name serverAuthImage --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,32
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name serverAuthText --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value serverAuthText.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name serverAuthText --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,16
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name failedLoginAttempts --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value failedLoginAttempts.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name failedLoginAttempts --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name failedLoginAttempts --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name isAuthenticated --dataType java.lang.Boolean --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value isAuthenticated.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name isAuthenticated --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name loginId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,loginId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.Login --field_name loginId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,200
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name user --dataType prjone.app.shared.authentication.User --Modifier private --annotation javax.persistence.OneToOne,javax.persistence.JoinColumn  --key cascade.javax.persistence.OneToOne,fetch.javax.persistence.OneToOne,name.javax.persistence.JoinColumn,referencedColumnName.javax.persistence.JoinColumn --value javax.persistence.CascadeType$ALL#javax.persistence.OneToOne,javax.persistence.FetchType$LAZY#javax.persistence.OneToOne,userId.javax.persistence.JoinColumn,userId.javax.persistence.JoinColumn --valueType javatype,javatype,string,string
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name coreContacts --dataType prjone.app.shared.contacts.CoreContacts --Modifier private --annotation javax.persistence.OneToOne,javax.persistence.JoinColumn  --key cascade.javax.persistence.OneToOne,fetch.javax.persistence.OneToOne,name.javax.persistence.JoinColumn,referencedColumnName.javax.persistence.JoinColumn --value javax.persistence.CascadeType$ALL#javax.persistence.OneToOne,javax.persistence.FetchType$LAZY#javax.persistence.OneToOne,contactId.javax.persistence.JoinColumn,contactId.javax.persistence.JoinColumn --valueType javatype,javatype,string,string
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.Login --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName serverAuthImage --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName serverAuthText --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName failedLoginAttempts --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName isAuthenticated --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName loginId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName user --getterMethod true --setterMethod true --direction UNIDIRECTION
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.Login --variableName coreContacts --getterMethod true --setterMethod true --direction UNIDIRECTION
+
+methodoperation type setValidator --class ~.app.shared.Authentication.Login
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.Login
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.Login --variableName serverAuthImage
+
+methodoperation type toString --class ~.app.shared.authentication.Login
+
+methodoperation type hashCode --class ~.app.shared.authentication.Login --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.Login --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.LoginRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.LoginService
+
+buzzorclass add --className ~.app.server.service.LoginServiceImpl  --extends prjone.app.server.service.LoginService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.LoginServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.LoginRepositoryImpl --implements prjone.app.server.repository.LoginRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.LoginRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.LoginRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Login --readOnly false --controllerClass ~.app.server.service.LoginService  --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.LoginbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Login --readOnly false --controllerClass ~.app.server.service.LoginService  --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.LoginbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Login --readOnly false --controllerClass ~.app.server.service.LoginService  --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.LoginbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Login --readOnly false --controllerClass ~.app.server.service.LoginService  --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.LoginbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.Login --readOnly false --controllerClass ~.app.server.service.LoginService  --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.LoginbzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.LoginServiceImpl --fieldName serverAuthImage --fieldType String
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Authentication.Login --queryName Login.DefaultFinders --queryValue "select e from Login e where e.systemInfo.active_status=1 and e.serverAuthImage LIKE :serverAuthImage"
+
+appsecurity add --className prjone.app.shared.authentication.Login
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.Login --queryName Login.findByuserId --queryValue "select e from Login e where e.systemInfo.active_status=1 and e.user.userId=:userId"
+
+methodoperation type namedQueryMethod --queryName Login.findByuserId --qvalue "select e from Login e where e.systemInfo.active_status=1 and e.user.userId=:userId" --qarameteres userId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.Login --controllerClass ~.app.server.service.LoginService --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --businessServiceClass ~.app.server.businessservice.LoginbzService --returnType List<prjone.app.shared.authentication.Login> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.Login --queryName Login.findBycontactId --queryValue "select e from Login e where e.systemInfo.active_status=1 and e.coreContacts.contactId=:contactId"
+
+methodoperation type namedQueryMethod --queryName Login.findBycontactId --qvalue "select e from Login e where e.systemInfo.active_status=1 and e.coreContacts.contactId=:contactId" --qarameteres contactId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.Login --controllerClass ~.app.server.service.LoginService --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --businessServiceClass ~.app.server.businessservice.LoginbzService --returnType List<prjone.app.shared.authentication.Login> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.Login --queryName Login.findById --queryValue "select e from Login e where e.systemInfo.active_status=1 and  e.loginId =:loginId"
+
+methodoperation type namedQueryMethod --queryName Login.findById --qvalue "select e from Login e where e.systemInfo.active_status=1 and  e.loginId =:loginId" --qarameteres loginId --typeOfParameteres String --entityName ~.app.shared.authentication.Login --controllerClass ~.app.server.service.LoginService --controllerImplClass ~.app.server.service.LoginServiceImpl --repositoryClass ~.app.server.repository.LoginRepository --repositoryImplClass ~.app.server.repository.LoginRepositoryImpl --businessServiceClass ~.app.server.businessservice.LoginbzService --returnType prjone.app.shared.authentication.Login --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.LoginSession --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface,com.applifire.server.security.authentication.interfaces.LoginSessionInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_LoginSession_T.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name AppServerSessionId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value AppServerSessionId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name AppServerSessionId --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name AppServerSessionId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 12,256
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name loginTime --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value loginTime.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name loginTime --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name logoutTime --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value logoutTime.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name logoutTime --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name clientIPAddress --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value clientIPAddress.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientIPAddress --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientIPAddress --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,128
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name clientIPAddressInt --dataType java.lang.Long --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value clientIPAddressInt.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientIPAddressInt --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name clientNetworkAddress --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value clientNetworkAddress.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientNetworkAddress --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientNetworkAddress --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name clientBrowser --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value clientBrowser.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientBrowser --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name clientBrowser --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name sessionData --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value sessionData.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name sessionData --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,5120
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name AppSessionId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,AppSessionId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.LoginSession --field_name AppSessionId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 12,256
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name userId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.LoginSession --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName AppServerSessionId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName loginTime --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName logoutTime --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName clientIPAddress --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName clientIPAddressInt --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName clientNetworkAddress --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName clientBrowser --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName sessionData --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName AppSessionId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName userId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.LoginSession --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authentication.LoginSession
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.LoginSession
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.LoginSession --variableName AppServerSessionId,loginTime,logoutTime
+
+methodoperation type toString --class ~.app.shared.authentication.LoginSession
+
+methodoperation type hashCode --class ~.app.shared.authentication.LoginSession --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.LoginSession --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.LoginSessionRepository --extends com.applifire.server.repository.SearchInterface
+
+buzzorclass add --className ~.app.server.repository.LoginSessionRepositoryImpl --implements com.applifire.server.security.authentication.interfaces.LoginSessionRepositoryInterface --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.LoginSessionRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.LoginSessionRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+sessionmethod create --className prjone.app.server.repository.LoginSessionRepositoryImpl --entityname prjone.app.shared.authentication.LoginSession
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.PassRecovery --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_PassRecovery_TP.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name answer --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value answer.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PassRecovery --field_name answer --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name passRecoveryId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,passRecoveryId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.PassRecovery --field_name passRecoveryId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name questionId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value questionId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name user --dataType prjone.app.shared.authentication.User --Modifier private --annotation javax.persistence.OneToOne,javax.persistence.JoinColumn  --key cascade.javax.persistence.OneToOne,fetch.javax.persistence.OneToOne,name.javax.persistence.JoinColumn,referencedColumnName.javax.persistence.JoinColumn --value javax.persistence.CascadeType$REFRESH#javax.persistence.OneToOne,javax.persistence.FetchType$LAZY#javax.persistence.OneToOne,userId.javax.persistence.JoinColumn,userId.javax.persistence.JoinColumn --valueType javatype,javatype,string,string
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.PassRecovery --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName answer --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName passRecoveryId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName questionId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.PassRecovery --variableName user --getterMethod true --setterMethod true --direction BIDIRECTION
+
+methodoperation type setValidator --class ~.app.shared.Authentication.PassRecovery
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.PassRecovery
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.PassRecovery --variableName questionId.toString(),answer
+
+methodoperation type toString --class ~.app.shared.authentication.PassRecovery
+
+methodoperation type hashCode --class ~.app.shared.authentication.PassRecovery --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.PassRecovery --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.PassRecoveryRepository --extends com.applifire.server.repository.SearchInterface
+
+buzzorclass add --className ~.app.server.repository.PassRecoveryRepositoryImpl --implements prjone.app.server.repository.PassRecoveryRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.PassRecoveryRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.PassRecoveryRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PassRecovery --readOnly false --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PassRecovery --readOnly false --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PassRecovery --readOnly false --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.PassRecovery --readOnly false --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.PassRecovery --queryName PassRecovery.findByuserId --queryValue "select e from PassRecovery e where e.systemInfo.active_status=1 and e.user.userId=:userId"
+
+methodoperation type namedQueryMethod --queryName PassRecovery.findByuserId --qvalue "select e from PassRecovery e where e.systemInfo.active_status=1 and e.user.userId=:userId" --qarameteres userId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.PassRecovery  --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl  --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --returnType List<prjone.app.shared.authentication.PassRecovery> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.PassRecovery --queryName PassRecovery.findByquestionId --queryValue "select e from PassRecovery e where e.systemInfo.active_status=1 and e.questionId=:questionId"
+
+methodoperation type namedQueryMethod --queryName PassRecovery.findByquestionId --qvalue "select e from PassRecovery e where e.systemInfo.active_status=1 and e.questionId=:questionId" --qarameteres questionId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.PassRecovery  --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl  --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --returnType List<prjone.app.shared.authentication.PassRecovery> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.PassRecovery --queryName PassRecovery.findById --queryValue "select e from PassRecovery e where e.systemInfo.active_status=1 and  e.passRecoveryId =:passRecoveryId"
+
+methodoperation type namedQueryMethod --queryName PassRecovery.findById --qvalue "select e from PassRecovery e where e.systemInfo.active_status=1 and  e.passRecoveryId =:passRecoveryId" --qarameteres passRecoveryId --typeOfParameteres String --entityName ~.app.shared.authentication.PassRecovery  --repositoryClass ~.app.server.repository.PassRecoveryRepository --repositoryImplClass ~.app.server.repository.PassRecoveryRepositoryImpl  --businessServiceClass ~.app.server.businessservice.PassRecoverybzService --returnType prjone.app.shared.authentication.PassRecovery --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authentication.UserData --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_UserData_TP.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name password --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value password.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name password --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name password --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,512
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name oneTimePassword --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value oneTimePassword.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name oneTimePassword --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,32
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name oneTimePasswordExpiry --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value oneTimePasswordExpiry.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name oneTimePasswordExpiry --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name oneTimePasswordExpiry --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name oneTimePasswordGenDate --dataType java.sql.Timestamp --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value oneTimePasswordGenDate.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name last5Passwords --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value last5Passwords.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name last5Passwords --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,5120
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name userDataId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,userDataId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authentication.UserData --field_name userDataId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name user --dataType prjone.app.shared.authentication.User --Modifier private --annotation javax.persistence.OneToOne,javax.persistence.JoinColumn  --key cascade.javax.persistence.OneToOne,fetch.javax.persistence.OneToOne,name.javax.persistence.JoinColumn,referencedColumnName.javax.persistence.JoinColumn --value javax.persistence.CascadeType$ALL#javax.persistence.OneToOne,javax.persistence.FetchType$LAZY#javax.persistence.OneToOne,userId.javax.persistence.JoinColumn,userId.javax.persistence.JoinColumn --valueType javatype,javatype,string,string
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authentication.UserData --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName password --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName oneTimePassword --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName oneTimePasswordExpiry --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName oneTimePasswordGenDate --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName last5Passwords --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName userDataId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authentication.UserData --variableName user --getterMethod true --setterMethod true --direction BIDIRECTION
+
+methodoperation type setValidator --class ~.app.shared.Authentication.UserData
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authentication.UserData
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authentication.UserData --variableName user.getUserId().toString()
+
+methodoperation type toString --class ~.app.shared.authentication.UserData
+
+methodoperation type hashCode --class ~.app.shared.authentication.UserData --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authentication.UserData --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.UserDataRepository --extends com.applifire.server.repository.SearchInterface
+
+buzzorclass add --className ~.app.server.repository.UserDataRepositoryImpl --implements prjone.app.server.repository.UserDataRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.UserDataRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.UserDataRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserData --readOnly false --repositoryClass ~.app.server.repository.UserDataRepository --repositoryImplClass ~.app.server.repository.UserDataRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserDatabzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserData --readOnly false --repositoryClass ~.app.server.repository.UserDataRepository --repositoryImplClass ~.app.server.repository.UserDataRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserDatabzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserData --readOnly false --repositoryClass ~.app.server.repository.UserDataRepository --repositoryImplClass ~.app.server.repository.UserDataRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserDatabzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authentication.UserData --readOnly false --repositoryClass ~.app.server.repository.UserDataRepository --repositoryImplClass ~.app.server.repository.UserDataRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserDatabzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.UserData --queryName UserData.findByuserId --queryValue "select e from UserData e where e.systemInfo.active_status=1 and e.user.userId=:userId"
+
+methodoperation type namedQueryMethod --queryName UserData.findByuserId --qvalue "select e from UserData e where e.systemInfo.active_status=1 and e.user.userId=:userId" --qarameteres userId --typeOfParameteres java.lang.String --entityName ~.app.shared.authentication.UserData  --repositoryClass ~.app.server.repository.UserDataRepository --repositoryImplClass ~.app.server.repository.UserDataRepositoryImpl  --businessServiceClass ~.app.server.businessservice.UserDatabzService --returnType List<prjone.app.shared.authentication.UserData> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authentication.UserData --queryName UserData.findById --queryValue "select e from UserData e where e.systemInfo.active_status=1 and  e.userDataId =:userDataId"
+
+methodoperation type namedQueryMethod --queryName UserData.findById --qvalue "select e from UserData e where e.systemInfo.active_status=1 and  e.userDataId =:userDataId" --qarameteres userDataId --typeOfParameteres String --entityName ~.app.shared.authentication.UserData  --repositoryClass ~.app.server.repository.UserDataRepository --repositoryImplClass ~.app.server.repository.UserDataRepositoryImpl  --businessServiceClass ~.app.server.businessservice.UserDatabzService --returnType prjone.app.shared.authentication.UserData --isFindByID true --isUserAccess false
+
+quit

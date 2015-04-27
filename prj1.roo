@@ -1,0 +1,441 @@
+
+
+
+
+ development mode --enabled true 
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authorization.Roles --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_Roles_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name RoleName --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value RoleName.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name RoleName --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name RoleName --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name RoleDescription --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value RoleDescription.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name RoleDescription --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name RoleDescription --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name RoleIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value RoleIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name RoleIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name roleHelp --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value roleHelp.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name roleHelp --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name roleId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,roleId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.Roles --field_name roleId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,64
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.Roles --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName RoleName --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName RoleDescription --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName RoleIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName roleHelp --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName roleId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.Roles --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authorization.Roles
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authorization.Roles
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authorization.Roles --variableName RoleName
+
+methodoperation type toString --class ~.app.shared.authorization.Roles
+
+methodoperation type hashCode --class ~.app.shared.authorization.Roles --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authorization.Roles --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.RolesRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.RolesService
+
+buzzorclass add --className ~.app.server.service.RolesServiceImpl  --extends prjone.app.server.service.RolesService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.RolesServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.RolesRepositoryImpl --implements prjone.app.server.repository.RolesRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.RolesRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.RolesRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.Roles --readOnly false --controllerClass ~.app.server.service.RolesService  --controllerImplClass ~.app.server.service.RolesServiceImpl --repositoryClass ~.app.server.repository.RolesRepository --repositoryImplClass ~.app.server.repository.RolesRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RolesbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.Roles --readOnly false --controllerClass ~.app.server.service.RolesService  --controllerImplClass ~.app.server.service.RolesServiceImpl --repositoryClass ~.app.server.repository.RolesRepository --repositoryImplClass ~.app.server.repository.RolesRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RolesbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.Roles --readOnly false --controllerClass ~.app.server.service.RolesService  --controllerImplClass ~.app.server.service.RolesServiceImpl --repositoryClass ~.app.server.repository.RolesRepository --repositoryImplClass ~.app.server.repository.RolesRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RolesbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.Roles --readOnly false --controllerClass ~.app.server.service.RolesService  --controllerImplClass ~.app.server.service.RolesServiceImpl --repositoryClass ~.app.server.repository.RolesRepository --repositoryImplClass ~.app.server.repository.RolesRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RolesbzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.Roles --queryName Roles.findById --queryValue "select e from Roles e where e.systemInfo.active_status=1 and  e.roleId =:roleId"
+
+methodoperation type namedQueryMethod --queryName Roles.findById --qvalue "select e from Roles e where e.systemInfo.active_status=1 and  e.roleId =:roleId" --qarameteres roleId --typeOfParameteres String --entityName ~.app.shared.authorization.Roles --controllerClass ~.app.server.service.RolesService --controllerImplClass ~.app.server.service.RolesServiceImpl --repositoryClass ~.app.server.repository.RolesRepository --repositoryImplClass ~.app.server.repository.RolesRepositoryImpl --businessServiceClass ~.app.server.businessservice.RolesbzService --returnType prjone.app.shared.authorization.Roles --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authorization.AppMenus --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_AppMenus_M.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuTreeId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuTreeId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuTreeId --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuTreeId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 2,256
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuIcon --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuIcon.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuIcon --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuIcon --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuAction --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuAction.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuAction --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuAction --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuCommands --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuCommands.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuCommands --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuCommands --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,64
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuDisplay --dataType java.lang.Boolean --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuDisplay.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuDisplay --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuDisplay --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuHead --dataType java.lang.Boolean --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuHead.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuHead --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuHead --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuLabel --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuLabel.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuLabel --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuLabel --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name uiType --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value uiType.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name uiType --valueType string --annotation javax.validation.constraints.NotNull --key value --value 1
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name uiType --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,3
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name RefObjectId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value RefObjectId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name RefObjectId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 0,256
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuAccessRights --dataType java.lang.Integer --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuAccessRights.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuAccessRights --valueType integer --annotation javax.validation.constraints.Min --key value.javax.validation.constraints.Min --value 0.javax.validation.constraints.Min
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuAccessRights --valueType integer --annotation javax.validation.constraints.Max --key value.javax.validation.constraints.Max --value 11.javax.validation.constraints.Max
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name menuId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,menuId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.AppMenus --field_name menuId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,64
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.AppMenus --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuTreeId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuIcon --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuAction --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuCommands --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuDisplay --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuHead --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuLabel --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName uiType --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName RefObjectId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuAccessRights --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName menuId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.AppMenus --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authorization.AppMenus
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authorization.AppMenus
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authorization.AppMenus --variableName menuLabel
+
+methodoperation type toString --class ~.app.shared.authorization.AppMenus
+
+methodoperation type hashCode --class ~.app.shared.authorization.AppMenus --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authorization.AppMenus --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.AppMenusRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.AppMenusService
+
+buzzorclass add --className ~.app.server.service.AppMenusServiceImpl  --extends prjone.app.server.service.AppMenusService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.AppMenusServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.AppMenusRepositoryImpl --implements prjone.app.server.repository.AppMenusRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.AppMenusRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.AppMenusRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.AppMenus --readOnly false --controllerClass ~.app.server.service.AppMenusService  --controllerImplClass ~.app.server.service.AppMenusServiceImpl --repositoryClass ~.app.server.repository.AppMenusRepository --repositoryImplClass ~.app.server.repository.AppMenusRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.AppMenusbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.AppMenus --readOnly false --controllerClass ~.app.server.service.AppMenusService  --controllerImplClass ~.app.server.service.AppMenusServiceImpl --repositoryClass ~.app.server.repository.AppMenusRepository --repositoryImplClass ~.app.server.repository.AppMenusRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.AppMenusbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.AppMenus --readOnly false --controllerClass ~.app.server.service.AppMenusService  --controllerImplClass ~.app.server.service.AppMenusServiceImpl --repositoryClass ~.app.server.repository.AppMenusRepository --repositoryImplClass ~.app.server.repository.AppMenusRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.AppMenusbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.AppMenus --readOnly false --controllerClass ~.app.server.service.AppMenusService  --controllerImplClass ~.app.server.service.AppMenusServiceImpl --repositoryClass ~.app.server.repository.AppMenusRepository --repositoryImplClass ~.app.server.repository.AppMenusRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.AppMenusbzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.AppMenus --readOnly false --controllerClass ~.app.server.service.AppMenusService  --controllerImplClass ~.app.server.service.AppMenusServiceImpl --repositoryClass ~.app.server.repository.AppMenusRepository --repositoryImplClass ~.app.server.repository.AppMenusRepositoryImpl --methodType search --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.AppMenusbzService --isUserAccess false
+
+methodoperation type BusinessService --sevicePath ~.app.server.service.AppMenusServiceImpl --fieldName menuAccessRights --fieldType integer
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.Authorization.AppMenus --queryName AppMenus.DefaultFinders --queryValue "select e from AppMenus e where e.systemInfo.active_status=1 and e.menuAccessRights BETWEEN :minmenuAccessRights AND :maxmenuAccessRights"
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.AppMenus --queryName AppMenus.findById --queryValue "select e from AppMenus e where e.systemInfo.active_status=1 and  e.menuId =:menuId"
+
+methodoperation type namedQueryMethod --queryName AppMenus.findById --qvalue "select e from AppMenus e where e.systemInfo.active_status=1 and  e.menuId =:menuId" --qarameteres menuId --typeOfParameteres String --entityName ~.app.shared.authorization.AppMenus --controllerClass ~.app.server.service.AppMenusService --controllerImplClass ~.app.server.service.AppMenusServiceImpl --repositoryClass ~.app.server.repository.AppMenusRepository --repositoryImplClass ~.app.server.repository.AppMenusRepositoryImpl --businessServiceClass ~.app.server.businessservice.AppMenusbzService --returnType prjone.app.shared.authorization.AppMenus --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authorization.RoleMenuBridge --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_RoleMenuBridge_T.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name roleMenuMapId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,roleMenuMapId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.RoleMenuBridge --field_name roleMenuMapId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,64
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name roleId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value roleId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name menuId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value menuId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.RoleMenuBridge --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.RoleMenuBridge --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.RoleMenuBridge --variableName roleMenuMapId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.RoleMenuBridge --variableName roleId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.RoleMenuBridge --variableName menuId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.RoleMenuBridge --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.RoleMenuBridge --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authorization.RoleMenuBridge
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authorization.RoleMenuBridge
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authorization.RoleMenuBridge --variableName roleId.toString(),menuId.toString()
+
+methodoperation type toString --class ~.app.shared.authorization.RoleMenuBridge
+
+methodoperation type hashCode --class ~.app.shared.authorization.RoleMenuBridge --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authorization.RoleMenuBridge --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.RoleMenuBridgeRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.RoleMenuBridgeService
+
+buzzorclass add --className ~.app.server.service.RoleMenuBridgeServiceImpl  --extends prjone.app.server.service.RoleMenuBridgeService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.RoleMenuBridgeServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.RoleMenuBridgeRepositoryImpl --implements prjone.app.server.repository.RoleMenuBridgeRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.RoleMenuBridgeRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.RoleMenuBridge --readOnly false --controllerClass ~.app.server.service.RoleMenuBridgeService  --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.RoleMenuBridge --readOnly false --controllerClass ~.app.server.service.RoleMenuBridgeService  --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.RoleMenuBridge --readOnly false --controllerClass ~.app.server.service.RoleMenuBridgeService  --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.RoleMenuBridge --readOnly false --controllerClass ~.app.server.service.RoleMenuBridgeService  --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.RoleMenuBridge --queryName RoleMenuBridge.findByroleId --queryValue "select e from RoleMenuBridge e where e.systemInfo.active_status=1 and e.roleId=:roleId"
+
+methodoperation type namedQueryMethod --queryName RoleMenuBridge.findByroleId --qvalue "select e from RoleMenuBridge e where e.systemInfo.active_status=1 and e.roleId=:roleId" --qarameteres roleId --typeOfParameteres java.lang.String --entityName ~.app.shared.authorization.RoleMenuBridge --controllerClass ~.app.server.service.RoleMenuBridgeService --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --returnType List<prjone.app.shared.authorization.RoleMenuBridge> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.RoleMenuBridge --queryName RoleMenuBridge.findBymenuId --queryValue "select e from RoleMenuBridge e where e.systemInfo.active_status=1 and e.menuId=:menuId"
+
+methodoperation type namedQueryMethod --queryName RoleMenuBridge.findBymenuId --qvalue "select e from RoleMenuBridge e where e.systemInfo.active_status=1 and e.menuId=:menuId" --qarameteres menuId --typeOfParameteres java.lang.String --entityName ~.app.shared.authorization.RoleMenuBridge --controllerClass ~.app.server.service.RoleMenuBridgeService --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --returnType List<prjone.app.shared.authorization.RoleMenuBridge> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.RoleMenuBridge --queryName RoleMenuBridge.findById --queryValue "select e from RoleMenuBridge e where e.systemInfo.active_status=1 and  e.roleMenuMapId =:roleMenuMapId"
+
+methodoperation type namedQueryMethod --queryName RoleMenuBridge.findById --qvalue "select e from RoleMenuBridge e where e.systemInfo.active_status=1 and  e.roleMenuMapId =:roleMenuMapId" --qarameteres roleMenuMapId --typeOfParameteres String --entityName ~.app.shared.authorization.RoleMenuBridge --controllerClass ~.app.server.service.RoleMenuBridgeService --controllerImplClass ~.app.server.service.RoleMenuBridgeServiceImpl --repositoryClass ~.app.server.repository.RoleMenuBridgeRepository --repositoryImplClass ~.app.server.repository.RoleMenuBridgeRepositoryImpl --businessServiceClass ~.app.server.businessservice.RoleMenuBridgebzService --returnType prjone.app.shared.authorization.RoleMenuBridge --isFindByID true --isUserAccess false
+
+
+
+// Entity Creation 
+
+buzzorclass add --className ~.app.shared.Authorization.UserRoleBridge --implements java.io.Serializable,com.applifire.shared.entity.web.entityInterface.CommonEntityInterface --annotation javax.persistence.Entity,javax.persistence.Table,org.eclipse.persistence.annotations.Cache --key type.org.eclipse.persistence.annotations.Cache,isolation.org.eclipse.persistence.annotations.Cache,size.org.eclipse.persistence.annotations.Cache,expiry.org.eclipse.persistence.annotations.Cache,alwaysRefresh.org.eclipse.persistence.annotations.Cache,disableHits.org.eclipse.persistence.annotations.Cache,name.javax.persistence.Table --value org.eclipse.persistence.annotations.CacheType$CACHE#org.eclipse.persistence.annotations.CacheType,org.eclipse.persistence.config.CacheIsolationType$ISOLATED#org.eclipse.persistence.config.CacheIsolationType,64000.org.eclipse.persistence.annotations.Cache,1.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,TRUE.org.eclipse.persistence.annotations.Cache,ast_1R49MU3YJQUQAKQZRDIHTW_UserRoleBridge_T.javax.persistence.Table --value_type javaType,javaType,Integer,Integer,Boolean,Boolean,String
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name primaryKey --dataType java.lang.String --Modifier private --annotation javax.persistence.Transient
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name roleUserMapId --dataType java.lang.String --Modifier private --valueType String,String --annotation javax.persistence.Id,javax.persistence.Column,javax.persistence.GeneratedValue --key generator.javax.persistence.GeneratedValue,name.javax.persistence.Column --value ApplifireUUIDGenerator.javax.persistence.GeneratedValue,roleUserMapId.javax.persistence.Column
+
+fieldAnnotation create --type ~.app.shared.Authorization.UserRoleBridge --field_name roleUserMapId --valueType integer,integer --annotation javax.validation.constraints.Size --key min.javax.validation.constraints.Size,max.javax.validation.constraints.Size --value 3,64
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name roleId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value roleId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name userId --dataType java.lang.String --Modifier private --valueType String --annotation javax.persistence.Column --key name.javax.persistence.Column --value userId.javax.persistence.Column
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name entityValidator --dataType com.applifire.server.helper.EntityValidatorHelper<Object> --Modifier private --annotation javax.persistence.Transient,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name version_id --dataType Integer --Modifier private --annotation javax.persistence.Version,javax.persistence.Column --key name.javax.persistence.Column --value version_id --valueType String
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name entityAudit --dataType prjone.app.shared.EntityAudit --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name systemInfo --dataType prjone.app.shared.SystemInfo --Modifier private --annotation javax.persistence.Embedded,com.fasterxml.jackson.annotation.JsonIgnore
+
+buzzorfield create --type ~.app.shared.Authorization.UserRoleBridge --field_name primaryDisplay --dataType String --Modifier private --annotation javax.persistence.Transient
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.UserRoleBridge --variableName primaryKey --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.UserRoleBridge --variableName roleUserMapId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.UserRoleBridge --variableName roleId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.UserRoleBridge --variableName userId --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.UserRoleBridge --variableName version_id --getterMethod true --setterMethod true
+
+methodoperation type getSetMethod --class ~.app.shared.Authorization.UserRoleBridge --variableName primaryDisplay --getterMethod false --setterMethod true
+
+methodoperation type setValidator --class ~.app.shared.Authorization.UserRoleBridge
+
+methodoperation type setLoggedUserInfo --class ~.app.shared.Authorization.UserRoleBridge
+
+methodoperation type getPrimayDisplay --class ~.app.shared.Authorization.UserRoleBridge --variableName roleId.toString(),userId.toString()
+
+methodoperation type toString --class ~.app.shared.authorization.UserRoleBridge
+
+methodoperation type hashCode --class ~.app.shared.authorization.UserRoleBridge --primaryClass true
+
+methodoperation type equals --class ~.app.shared.authorization.UserRoleBridge --primaryClass true
+
+interfacebuzzor add --InterfaceName ~.app.server.repository.UserRoleBridgeRepository --extends com.applifire.server.repository.SearchInterface
+
+class --abstract true --class ~.app.server.service.UserRoleBridgeService
+
+buzzorclass add --className ~.app.server.service.UserRoleBridgeServiceImpl  --extends prjone.app.server.service.UserRoleBridgeService --value_type string --annotation org.springframework.web.bind.annotation.RestController
+
+Class createAnnotation --toClass ~.app.server.service.UserRoleBridgeServiceImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorclass add --className ~.app.server.repository.UserRoleBridgeRepositoryImpl --implements prjone.app.server.repository.UserRoleBridgeRepository --extends com.applifire.server.repository.SearchInterfaceImpl --value_type string --annotation org.springframework.stereotype.Repository
+
+Class createAnnotation --toClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --annotation org.springframework.context.annotation.Scope --key value.org.springframework.context.annotation.Scope,proxyMode.org.springframework.context.annotation.Scope --value request.org.springframework.context.annotation.Scope,org.springframework.context.annotation.ScopedProxyMode$TARGET_CLASS#org.springframework.context.annotation.Scope --value_type string,javatype
+
+buzzorfield create --type ~.app.server.repository.UserRoleBridgeRepositoryImpl --field_name emfResource --dataType com.applifire.server.helper.ResourceFactoryManagerHelper --Modifier private --annotation org.springframework.beans.factory.annotation.Autowired
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.UserRoleBridge --readOnly false --controllerClass ~.app.server.service.UserRoleBridgeService  --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --methodType show --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.UserRoleBridge --readOnly false --controllerClass ~.app.server.service.UserRoleBridgeService  --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --methodType save --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.UserRoleBridge --readOnly false --controllerClass ~.app.server.service.UserRoleBridgeService  --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --methodType delete --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --isUserAccess false
+
+methodoperation type ENTITY --entityName ~.app.shared.authorization.UserRoleBridge --readOnly false --controllerClass ~.app.server.service.UserRoleBridgeService  --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --methodType update --isMultitenant false --transactionType none --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.UserRoleBridge --queryName UserRoleBridge.findByroleId --queryValue "select e from UserRoleBridge e where e.systemInfo.active_status=1 and e.roleId=:roleId"
+
+methodoperation type namedQueryMethod --queryName UserRoleBridge.findByroleId --qvalue "select e from UserRoleBridge e where e.systemInfo.active_status=1 and e.roleId=:roleId" --qarameteres roleId --typeOfParameteres java.lang.String --entityName ~.app.shared.authorization.UserRoleBridge --controllerClass ~.app.server.service.UserRoleBridgeService --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --returnType List<prjone.app.shared.authorization.UserRoleBridge> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.UserRoleBridge --queryName UserRoleBridge.findByuserId --queryValue "select e from UserRoleBridge e where e.systemInfo.active_status=1 and e.userId=:userId"
+
+methodoperation type namedQueryMethod --queryName UserRoleBridge.findByuserId --qvalue "select e from UserRoleBridge e where e.systemInfo.active_status=1 and e.userId=:userId" --qarameteres userId --typeOfParameteres java.lang.String --entityName ~.app.shared.authorization.UserRoleBridge --controllerClass ~.app.server.service.UserRoleBridgeService --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --returnType List<prjone.app.shared.authorization.UserRoleBridge> --isFindByID true --isUserAccess false
+
+// Named Query  
+
+namedQuery insert --toClass ~.app.shared.authorization.UserRoleBridge --queryName UserRoleBridge.findById --queryValue "select e from UserRoleBridge e where e.systemInfo.active_status=1 and  e.roleUserMapId =:roleUserMapId"
+
+methodoperation type namedQueryMethod --queryName UserRoleBridge.findById --qvalue "select e from UserRoleBridge e where e.systemInfo.active_status=1 and  e.roleUserMapId =:roleUserMapId" --qarameteres roleUserMapId --typeOfParameteres String --entityName ~.app.shared.authorization.UserRoleBridge --controllerClass ~.app.server.service.UserRoleBridgeService --controllerImplClass ~.app.server.service.UserRoleBridgeServiceImpl --repositoryClass ~.app.server.repository.UserRoleBridgeRepository --repositoryImplClass ~.app.server.repository.UserRoleBridgeRepositoryImpl --businessServiceClass ~.app.server.businessservice.UserRoleBridgebzService --returnType prjone.app.shared.authorization.UserRoleBridge --isFindByID true --isUserAccess false
+
+quit
